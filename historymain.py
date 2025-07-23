@@ -36,11 +36,11 @@ events_df = pd.DataFrame(event_data)
 events_df["월일"] = events_df["발생날짜"].str.replace("월 ", "-").str.replace("일", "").str.strip()
 
 # 🖥️ Streamlit UI
-st.title("📅 나의 생일날 발생한 역사적 사건 알아보기")
+st.title("🔍 나의 생일날 발생한 역사적 사건 알아보기")
 selected_date = st.date_input("날짜를 선택하세요", datetime.today())
 month_day = selected_date.strftime("%-m-%-d")  # ex) '3-1'
 
-# 🕯️ 서거한 독립운동가 출력
+# 📅 서거한 독립운동가 출력
 matched_people = people_df[people_df["월일"] == month_day]
 if not matched_people.empty:
     st.subheader(f"🕯️ {selected_date.strftime('%m월 %d일')} 서거한 독립운동가")
