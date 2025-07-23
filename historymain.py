@@ -25,7 +25,7 @@ matched = df[df["월일"] == month_day]
 
 # 📋 결과 출력
 if not matched.empty:
-    st.subheader(f"🕯📅 {selected_date.strftime('%m월 %d일')}에 서거하신 독립운동가")
+    st.subheader(f"📅 {selected_date.strftime('%m월 %d일')}에 서거하신 독립운동가")
     for _, row in matched.iterrows():
         st.markdown(f"""
         **이름**: {row["이름"]}  
