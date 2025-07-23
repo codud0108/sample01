@@ -16,7 +16,7 @@ df = pd.DataFrame(data)
 df["월일"] = df["서거일"].str.replace("월 ", "-").str.replace("일", "").str.strip()
 
 # 🖥️ Streamlit 앱 UI
-st.title("독립운동가 서거일 조회")
+st.title("생일을 입력해주세요.")
 selected_date = st.date_input("날짜를 선택하세요", datetime.today())
 month_day = selected_date.strftime("%-m-%-d")  # 예: '7-23'
 
