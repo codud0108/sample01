@@ -16,7 +16,7 @@ df = pd.DataFrame(data)
 df["월일"] = df["서거일"].str.replace("월 ", "-").str.replace("일", "").str.strip()
 
 # 🖥️ Streamlit 앱 UI
-st.title("🇰🇷 독립운동가 서거일 조회")
+st.title("독립운동가 서거일 조회")
 selected_date = st.date_input("날짜를 선택하세요", datetime.today())
 month_day = selected_date.strftime("%-m-%-d")  # 예: '7-23'
 
@@ -25,7 +25,7 @@ matched = df[df["월일"] == month_day]
 
 # 📋 결과 출력
 if not matched.empty:
-    st.subheader(f"🕯️ {selected_date.strftime('%m월 %d일')}에 서거하신 독립운동가")
+    st.subheader(f"🕯📅 {selected_date.strftime('%m월 %d일')}에 서거하신 독립운동가")
     for _, row in matched.iterrows():
         st.markdown(f"""
         **이름**: {row["이름"]}  
